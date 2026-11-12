@@ -205,6 +205,7 @@ cython_debug/
 # Temporary file for partial code execution
 tempCodeRunnerFile.py
 
+Spark_BatchJob_Assignment (4).pdf
 # Ruff stuff:
 .ruff_cache/
 
@@ -218,3 +219,4 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+

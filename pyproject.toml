@@ -3,11 +3,13 @@ name = "olist-spark-transform"
 version = "0.1.0"
 requires-python = ">=3.11"
 dependencies = [
+    "pymongo>=4.19.0",
     "pyspark>=3.5,<3.6",
+    "python-dotenv>=1.2.4",
 ]
 
 [tool.pyrefly]
 python-interpreter-path = ".venv/bin/python"
 site-package-path = [".venv/lib/python3.11/site-packages"]
-search-path = ["src"]
+search-path = ["src", "load", "."]
 
