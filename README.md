@@ -9,48 +9,7 @@ The pipeline processes the Brazilian E-Commerce Public Dataset by Olist, transfo
 
 ## Architecture
 
-```text
-                 Olist E-Commerce Dataset
-                            |
-                            v
-                    Python Data Loader
-                            |
-                            v
-                      MongoDB Atlas
-             +--------------+--------------+
-             |              |              |
-        Nested Orders    Customers     Products / Sellers
-             |              |              |
-             +--------------+--------------+
-                            |
-                 MongoDB Spark Connector
-                            |
-                            v
-                     Amazon EMR
-                    Apache Spark
-                            |
-                +-----------+-----------+
-                |           |           |
-            Flattening   Cleaning   Enrichment
-                |           |           |
-                +-----------+-----------+
-                            |
-                    Derived Metrics
-                            |
-              Aggregations / Windows / Pivot
-                            |
-                    Data Mart Builder
-                            |
-                            v
-                       Amazon S3
-                   Partitioned Parquet
-                            |
-               +------------+------------+
-               |            |            |
-          Order Revenue   Seller      Customer State
-              Mart     Performance       Mart
-                            Mart
-```
+![Olist E-Commerce Batch ETL Pipeline architecture](docs/Olist%20E-Commerce%20Batch%20ETL%20Pipeline.png)
 
 The MongoDB connection URI is retrieved through AWS Secrets Manager. The EMR instance role provides the permissions required to access the secret and write output to Amazon S3.
 
